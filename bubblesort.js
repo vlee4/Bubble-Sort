@@ -10,8 +10,11 @@ function swap(array) {
 
 function bubbleSort(array) {
   /* your code here */
+  // debugger;
   if (array.length <= 1) {
     return array;
+  } else if (array.length === 2) {
+    return swap(array);
   } else {
     //loop through to array.length
     //once reach end, call bubblesort with (0, -1)
@@ -22,11 +25,11 @@ function bubbleSort(array) {
       array[i] = swapped[0];
       array[i + 1] = swapped[1];
     }
-    console.log("THE ARRAY", array);
+    // console.log("THE ARRAY", array);
     outputArr.unshift(array[array.length - 1]);
-    console.log("Slice", array.slice(0, -1));
+    // console.log("Slice", array.slice(0, -1));
     outputArr = [...bubbleSort(array.slice(0, -1)), ...outputArr];
-    console.log("OUTPUT ARRAY", outputArr);
+    // console.log("OUTPUT ARRAY", outputArr);
     return outputArr;
   }
 }
